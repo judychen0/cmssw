@@ -22,7 +22,7 @@
 int main(int argc, char* argv[]) {
   // define what muon you are using; this is necessary as FWLite is not
   // capable of reading edm::Views
-  using pat::Muon;
+  using reco::Muon;
 
   // ----------------------------------------------------------------------
   // First Part:
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
 
         // Handle to the muon collection
         edm::Handle<std::vector<Muon> > muons;
-        event.getByLabel(std::string("slimmedMuons"), slimmedMuons);
+        event.getByLabel(std::string("muons"), muons);
 
         // loop muon collection and fill histograms
         for (std::vector<Muon>::const_iterator mu1 = muons->begin(); mu1 != muons->end(); ++mu1) {
